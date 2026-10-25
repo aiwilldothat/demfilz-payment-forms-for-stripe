@@ -1,0 +1,9 @@
+/* Self-hosted Nunito (SIL Open Font License 1.1 — see assets/fonts/LICENSE.txt).
+   Variable font: the single woff2 covers weights 200–1000, so no external requests. */
+@font-face {
+	font-family: "Nunito";
+	font-style: normal;
+	font-weight: 200 1000;
+	font-display: swap;
+	src: url("../fonts/nunito-variable.woff2") format("woff2");
+}

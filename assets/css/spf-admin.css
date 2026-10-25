@@ -1,0 +1,355 @@
+/* Demfilz Payment Forms for Stripe — admin dashboard */
+.spf-admin { max-width: 940px; }
+.spf-admin input,
+.spf-admin select,
+.spf-admin textarea { box-sizing: border-box; max-width: 100%; }
+
+.spf-admin-h1 {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 23px;
+	margin: 14px 0 18px;
+}
+.spf-logo {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	border-radius: 8px;
+	background: linear-gradient(135deg, #635bff, #7c5cff);
+	color: #fff;
+	font-weight: 800;
+	font-size: 17px;
+}
+.spf-badge {
+	font-size: 11px;
+	font-weight: 700;
+	padding: 3px 9px;
+	border-radius: 999px;
+	letter-spacing: .03em;
+	text-transform: uppercase;
+}
+.spf-badge-test { background: #fff7ed; color: #c2410c; }
+.spf-badge-live { background: #ecfdf5; color: #047857; }
+
+.spf-tabs { margin-bottom: 20px; }
+
+.spf-card {
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	padding: 24px 26px;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 2px rgba(2, 6, 23, .04);
+}
+.spf-card h2 { margin: 0 0 4px; font-size: 17px; }
+.spf-card-sub { margin: 0 0 18px; color: #64748b; font-size: 13px; }
+.spf-card-muted { background: #f8fafc; }
+
+.spf-setting { margin-bottom: 18px; }
+.spf-setting:last-child { margin-bottom: 0; }
+.spf-setting > label {
+	display: block;
+	font-weight: 600;
+	font-size: 13px;
+	margin-bottom: 6px;
+	color: #334155;
+}
+.spf-setting input[type="text"],
+.spf-setting input[type="email"],
+.spf-setting input[type="password"],
+.spf-setting input[type="number"],
+.spf-setting select {
+	width: 100%;
+	max-width: 480px;
+	padding: 10px 12px;
+	border: 1px solid #e2e8f0;
+	border-radius: 9px;
+	font-size: 14px;
+	box-shadow: none;
+}
+.spf-setting input:focus,
+.spf-setting select:focus {
+	border-color: #635bff;
+	box-shadow: 0 0 0 2px rgba(99, 91, 255, .2);
+	outline: none;
+}
+
+.spf-key { position: relative; max-width: 480px; }
+.spf-key input {
+	width: 100%;
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	padding-right: 42px !important;
+}
+.spf-reveal {
+	position: absolute;
+	right: 6px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 15px;
+	opacity: .55;
+	line-height: 1;
+}
+.spf-reveal:hover { opacity: 1; }
+
+.spf-hint { margin: 6px 0 0; color: #64748b; font-size: 12.5px; }
+
+.spf-copy { display: flex; gap: 8px; max-width: 560px; }
+.spf-copy input {
+	flex: 1;
+	padding: 10px 12px;
+	border: 1px solid #e2e8f0;
+	border-radius: 9px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	font-size: 13px;
+	background: #f8fafc;
+}
+
+.spf-grid-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 18px;
+	max-width: 480px;
+}
+
+.spf-shortcode {
+	display: inline-block;
+	background: #0f172a;
+	color: #e2e8f0;
+	padding: 8px 12px;
+	border-radius: 8px;
+	font-size: 13px;
+	margin: 6px 0;
+	word-break: break-all;
+}
+
+/* ---- Custom modifications CTA ---- */
+.spf-cta-card {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 22px;
+	background: linear-gradient(135deg, #f5f3ff, #eef2ff);
+	border-color: #e0e7ff;
+}
+.spf-cta-card h2 { margin: 0 0 5px; }
+.spf-cta-text p { margin: 0; color: #4b5563; font-size: 13px; max-width: 540px; }
+.spf-cta-btn {
+	box-sizing: border-box;
+	flex: 0 0 auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 20px;
+	background: linear-gradient(135deg, #635bff, #7c5cff);
+	color: #fff;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 1;
+	box-shadow: 0 10px 22px -10px #635bff;
+	transition: transform .12s ease, box-shadow .2s ease;
+}
+.spf-cta-btn:hover,
+.spf-cta-btn:focus,
+.spf-cta-btn:visited { color: #fff; }
+.spf-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 15px 28px -10px #635bff; }
+
+.spf-stats {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 14px;
+	margin-bottom: 22px;
+}
+.spf-stat {
+	position: relative;
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	padding: 18px 20px;
+	box-shadow: 0 1px 2px rgba(2, 6, 23, .04);
+	overflow: hidden;
+	transition: transform .14s ease, box-shadow .2s ease;
+}
+.spf-stat::before {
+	content: "";
+	position: absolute;
+	top: 0; left: 0; right: 0;
+	height: 3px;
+	background: #635bff;
+}
+.spf-stat:nth-child(1)::before { background: linear-gradient(90deg, #635bff, #7c5cff); }
+.spf-stat:nth-child(2)::before { background: linear-gradient(90deg, #7c5cff, #a855f7); }
+.spf-stat:nth-child(3)::before { background: linear-gradient(90deg, #10b981, #34d399); }
+.spf-stat:nth-child(4)::before { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.spf-stat:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 24px -12px rgba(2, 6, 23, .25);
+}
+.spf-stat-label {
+	display: block;
+	font-size: 12px;
+	color: #64748b;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	margin-bottom: 8px;
+}
+.spf-stat-num {
+	display: block;
+	font-size: 22px;
+	font-weight: 700;
+	color: #0f172a;
+	letter-spacing: -.01em;
+}
+
+.spf-table-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.spf-filters a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #64748b;
+	margin-right: 14px;
+	padding-bottom: 3px;
+}
+.spf-filters a.active {
+	color: #635bff;
+	border-bottom: 2px solid #635bff;
+	font-weight: 600;
+}
+
+.spf-table {
+	background: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 14px;
+	overflow: hidden;
+	border-collapse: separate;
+	border-spacing: 0;
+	width: 100%;
+}
+.spf-table th {
+	text-align: left;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	color: #64748b;
+	padding: 12px 16px;
+	background: #f8fafc;
+	border-bottom: 1px solid #e2e8f0;
+}
+.spf-table td {
+	padding: 14px 16px;
+	border-bottom: 1px solid #f1f5f9;
+	font-size: 14px;
+	vertical-align: top;
+	color: #0f172a;
+}
+.spf-table tbody tr { transition: background .12s ease; }
+.spf-table tbody tr:hover { background: #f8fafc; }
+.spf-table tr:last-child td { border-bottom: none; }
+.spf-msg { color: #94a3b8; font-size: 12.5px; margin-top: 3px; }
+.spf-muted { color: #94a3b8; font-size: 12.5px; }
+
+.spf-pill { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+.spf-pill-paid { background: #ecfdf5; color: #047857; }
+.spf-pill-pending { background: #fffbeb; color: #b45309; }
+.spf-pill-failed { background: #fef2f2; color: #b42318; }
+
+.spf-empty { text-align: center; color: #94a3b8; padding: 40px !important; }
+
+.spf-pagination { margin-top: 16px; display: flex; gap: 6px; }
+.spf-pagination .page-numbers {
+	padding: 6px 11px;
+	border: 1px solid #e2e8f0;
+	border-radius: 8px;
+	text-decoration: none;
+	font-size: 13px;
+	color: #334155;
+	background: #fff;
+}
+.spf-pagination .current { background: #635bff; color: #fff; border-color: #635bff; }
+
+/* ---- Responsive ---- */
+@media (max-width: 782px) {
+	.spf-stats { grid-template-columns: repeat(2, 1fr); }
+	.spf-grid-2 { grid-template-columns: 1fr; }
+	.spf-card { padding: 20px 18px; }
+	.spf-setting input[type="text"],
+	.spf-setting input[type="email"],
+	.spf-setting input[type="password"],
+	.spf-setting input[type="number"],
+	.spf-setting select,
+	.spf-key { max-width: 100%; }
+	.spf-copy { flex-wrap: wrap; max-width: 100%; }
+	.spf-copy input { flex: 1 1 100%; min-width: 0; }
+	.spf-copy .spf-copy-btn { width: 100%; }
+	.spf-cta-card { flex-direction: column; align-items: flex-start; }
+	.spf-cta-btn { width: 100%; justify-content: center; }
+	.spf-table-head { flex-direction: column; align-items: stretch; }
+	.spf-table-head .button { text-align: center; }
+}
+
+/* Stack the payments table into labelled cards on phones. */
+@media (max-width: 600px) {
+	.spf-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+	.spf-stat { padding: 14px 16px; }
+	.spf-stat-num { font-size: 19px; }
+
+	.spf-table { display: block; border: none; background: transparent; box-shadow: none; width: 100%; }
+	.spf-table thead { display: none; }
+	.spf-table tbody,
+	.spf-table tr,
+	.spf-table td { display: block; width: 100%; }
+	.spf-table tr {
+		box-sizing: border-box;
+		background: #fff;
+		border: 1px solid #e2e8f0;
+		border-radius: 12px;
+		margin-bottom: 12px;
+		padding: 4px 0;
+		box-shadow: 0 1px 2px rgba(2, 6, 23, .04);
+		overflow: hidden;
+	}
+	.spf-table tbody tr:hover { background: #fff; }
+	/* Label floats top-left (absolute); the value flows and wraps in the rest. */
+	.spf-table td {
+		box-sizing: border-box;
+		position: relative;
+		padding: 9px 16px 9px 104px;
+		border-bottom: 1px solid #f1f5f9;
+		text-align: right;
+		min-height: 38px;
+		word-break: break-word;
+	}
+	.spf-table tr td:last-child { border-bottom: none; }
+	.spf-table td::before {
+		content: attr(data-label);
+		position: absolute;
+		left: 16px;
+		top: 10px;
+		width: 80px;
+		text-align: left;
+		font-weight: 600;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: .03em;
+		color: #94a3b8;
+		white-space: nowrap;
+	}
+	.spf-table td.spf-empty { padding: 28px 16px; text-align: center; min-height: 0; }
+	.spf-table td.spf-empty::before { content: ""; }
+	.spf-msg,
+	.spf-muted { text-align: right; }
+}
